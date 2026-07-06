@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Housing Market Trends</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.js"></script>
+</head>
+<body>
+
+  <header class="site">
+    <div class="wrap">
+      <div class="brand"><span class="brand-mark"></span> Housing Market Trends</div>
+      <nav class="main">
+        <a href="/">Overview</a>
+        <a href="/dashboard" class="active">Dashboard</a>
+        <a href="https://github.com/" target="_blank">Data & Repo</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:40px;">
+    <div class="wrap">
+      <div class="section-head"><span class="tag"></span><h2>Interactive dashboard & story</h2></div>
+
+      {% if is_placeholder %}
+      <div class="notice">
+        This is showing a placeholder link. Publish your workbook to Tableau Public
+        (see <code>tableau/TABLEAU_STEPS.md</code>, step 7), then paste the real
+        URLs into <code>TABLEAU_DASHBOARD_URL</code> and <code>TABLEAU_STORY_URL</code>
+        at the top of <code>flask_app/app.py</code>.
+      </div>
+      {% endif %}
+
+      <div class="tabs">
+        <button class="tab active" onclick="showViz('dashboard')">Dashboard</button>
+        <button class="tab" onclick="showViz('story')">Story</button>
+      </div>
+
+      <div class="viz-shell" id="dashboard-shell">
+        <tableau-viz id="dashboardViz"
+          src="{{ dashboard_url }}"
+          toolbar="bottom"
+          hide-tabs
+          width="100%" height="600">
+        </tableau-viz>
+      </div>
+
+      <div class="viz-shell" id="story-shell" style="display:none;">
+        <tableau-viz id="storyViz"
+          src="{{ story_url }}"
+          toolbar="bottom"
+          hide-tabs
+          width="100%" height="600">
+        </tableau-viz>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">Housing Market Trends — Tableau + Flask project</div>
+  </footer>
+
+  <script>
+    function showViz(which) {
+      const dashShell = document.getElementById('dashboard-shell');
+      const storyShell = document.getElementById('story-shell');
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(t => t.classList.remove('active'));
+      if (which === 'dashboard') {
+        dashShell.style.display = 'block';
+        storyShell.style.display = 'none';
+        tabs[0].classList.add('active');
+      } else {
+        dashShell.style.display = 'none';
+        storyShell.style.display = 'block';
+        tabs[1].classList.add('active');
+      }
+    }
+  </script>
+
+</body>
+</html>
