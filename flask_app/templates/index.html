@@ -16,7 +16,7 @@
       <nav class="main">
         <a href="/" class="active">Overview</a>
         <a href="/dashboard">Dashboard</a>
-        <a href="https://github.com/" target="_blank">Data & Repo</a>
+       <a href="https://github.com/bhumikaagith/house-market-trends-tableau-project.git" target="_blank">Data & Repo</a>
       </nav>
     </div>
   </header>
@@ -30,8 +30,7 @@
         floors, and basement area relate to sale price — built as an interactive
         Tableau dashboard and story, embedded here for anyone to explore.
       </p>
-      <a href="/dashboard" class="btn btn-primary">View the dashboard →</a>
-      <a href="#about" class="btn btn-ghost">What's in the data</a>
+ <a href="/dashboard" class="btn btn-primary">View the dashboard →</a>
 
       <div class="kpi-strip">
         <div class="kpi"><div class="num">{{ kpis.total_sales }}</div><div class="label">sales analyzed</div></div>
@@ -44,31 +43,7 @@
     </div>
   </section>
 
-  <section class="section" id="about">
-    <div class="wrap">
-      <div class="section-head"><span class="tag"></span><h2>How this was built</h2></div>
-      <div class="grid-3">
-        <div class="card">
-          <div class="step">01 — Data</div>
-          <h3>Clean, transformed dataset</h3>
-          <p>21,609 residential sales with price, size, age, renovation, and
-          location fields — already cleaned with categorical fields one-hot encoded.</p>
-        </div>
-        <div class="card">
-          <div class="step">02 — Tableau</div>
-          <h3>Calculated fields + 8 visuals</h3>
-          <p>Eight calculated fields collapse the one-hot columns into readable
-          dimensions, feeding a responsive dashboard and a five-point story.</p>
-        </div>
-        <div class="card">
-          <div class="step">03 — Web</div>
-          <h3>Embedded with Flask</h3>
-          <p>The published Tableau Public dashboard and story are embedded directly
-          into this small Flask app, with live KPIs computed from the source CSV.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <footer class="site">
     <div class="wrap">Housing Market Trends — Tableau + Flask project</div>
