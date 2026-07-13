@@ -9,7 +9,7 @@ app = Flask(__name__)
 # tableau/TABLEAU_STEPS.md). Leave as-is and the page will show a
 # placeholder notice instead of erroring out.
 # ------------------------------------------------------------------
-TABLEAU_DASHBOARD_URL = "https://public.tableau.com/shared/JFB89XQC3?:display_count=n&:origin=viz_share_link"
+TABLEAU_DASHBOARD_URL = "https://public.tableau.com/views/HousingMarketAnalysisDashboard_17837934277010/Dashboard1"
 TABLEAU_STORY_URL = "https://public.tableau.com/views/YOUR_WORKBOOK/HousingMarketInsights"
 # ------------------------------------------------------------------
 
