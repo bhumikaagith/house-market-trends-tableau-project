@@ -10,7 +10,7 @@ app = Flask(__name__)
 # placeholder notice instead of erroring out.
 # ------------------------------------------------------------------
 TABLEAU_DASHBOARD_URL = "https://public.tableau.com/views/HousingMarketAnalysisDashboard_17837934277010/Dashboard1"
-TABLEAU_STORY_URL = "https://public.tableau.com/views/YOUR_WORKBOOK/HousingMarketInsights"
+TABLEAU_STORY_URL = "https://public.tableau.com/views/shared/Y56R8CWN5"
 # ------------------------------------------------------------------
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "Transformed_Housing_Data2.csv")
